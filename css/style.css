@@ -1,0 +1,111 @@
+*{
+	text-decoration: none;
+	padding: 0;
+	
+}
+
+body {
+	font-family: "Noto Sans", arial, sans-serif;
+	font-size: 14pt;
+	color: #293D38;
+	height: 100vh;
+	margin: 0;
+}
+
+.navbar {
+	overflow: hidden;
+	background-color: #1F4743;
+	
+}
+
+
+.menu {
+	float: right;
+}
+.menu a {
+	
+	display: inline-block;
+	font-family: Work Sans, arial, sans-serif;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+	font-size: 16pt;
+	font-weight: 300;
+	margin: 0, 10px;
+	
+}
+
+.menu a:hover {
+	border-bottom: 3px solid whitesmoke;
+	
+} 
+
+
+header {
+	float: left;
+	font-family: Cormorant Garamond, serif;
+	font-size: 30pt;
+	color: #f2f2f2;
+	padding: 10px;
+}
+
+.hero-image {
+	background-image:linear-gradient(rgba(0, 0, 0, 0.3)), url(../images/cariatidi.jpg);
+	height: 80%;
+	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	position: relative;
+
+}
+.hero-text {
+	text-align: left;
+	top: 50%;
+	transform: translateY(-50%);
+	align-content: center;
+	position: absolute;
+	float: left;
+	color: white;
+	left: 3%;
+}
+
+.hero-text h1 {
+	font-family: Cormorant Garamond, serif;
+	font-size: 40pt;
+}
+
+.hero-text button {
+	color: #f5f7f3;
+	font-family: Work Sans, arial, sans-serif;
+	font-size: 16pt;
+	background-color: #71C1B9;
+  	border: none;
+  	color: black;
+  	padding: 10px 20px;
+  	text-align: center;
+  	text-decoration: none;
+  	margin: 100px, 0px;
+  	cursor: pointer;
+  	border-radius: 10px	
+}
+
+.hero-text button:hover {
+  background-color: #f1f1f1;
+
+}
+
+.hero-text p {
+	margin-top: 10%;
+}
+
+.hero-text a {
+	text-decoration: underline;
+	text-decoration-color: darkred;
+	color: darkred;
+}
+
+.hero-text a:hover {
+	color: skyblue;
+	text-decoration-color: skyblue;
+}
