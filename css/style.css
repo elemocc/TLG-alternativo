@@ -109,3 +109,19 @@ header {
 	color: skyblue;
 	text-decoration-color: skyblue;
 }
+
+/* secondo livello homepage, le due box */
+.container {
+	border: 3px solid black;
+	display: flex;
+	justify-content: space-evenly;
+	min-height: 500px;
+	align-items: center;
+}
+
+.box {
+	height: 300px;
+	width: 45%;
+	background-color: yellow;
+	border: 3px solid blueviolet;
+}
