@@ -7,10 +7,11 @@
 body {
 	font-family: "Noto Sans", arial, sans-serif;
 	font-size: 14pt;
-	color: #293D38;
+	color: #022f40;
 	height: 100vh;
 	margin: 0;
 }
+
 
 .navbar {
 	overflow: hidden;
@@ -27,19 +28,22 @@ body {
 	display: inline-block;
 	font-family: Work Sans, arial, sans-serif;
 	color: #f2f2f2;
+	font-weight: 400;
 	text-align: center;
 	padding: 16px;
 	text-decoration: none;
 	font-size: 16pt;
-	font-weight: 300;
 	margin: 0, 10px;
 	
 }
 
 .menu a:hover {
 	border-bottom: 3px solid whitesmoke;
-	
 } 
+
+.menu .active {
+		border-bottom: 3px solid whitesmoke;
+}
 
 
 header {
@@ -77,9 +81,7 @@ header {
 
 .hero-text button {
 	color: #293D38;
-	font-family: Work Sans, arial, sans-serif;
-	font-size: 16pt;
-	background-color: #8AE9A8;
+	background-color: #FF740A;
   border: none;
   color: black;
   padding: 10px 20px;
@@ -87,12 +89,16 @@ header {
   text-decoration: none;
   margin: 100px, 0px;
   cursor: pointer;
-  border-radius: 10px	
+  border-radius: 10px;	
+  text-decoration: none;
+	color: #293D38;
+	font-family: Work Sans, arial, sans-serif;
+	font-size: 18pt;
+	font-weight: 500;
 }
 
 .hero-text button:hover {
-  background-color: #32746d;
-
+  background-color: #CC5800;
 }
 
 .hero-text p {
@@ -101,13 +107,13 @@ header {
 
 .hero-text a {
 	text-decoration: underline;
-	text-decoration-color: darkred;
-	color: darkred;
+	text-decoration-color: #06AED5;
+	color: #06AED5;
 }
 
 .hero-text a:hover {
-	color: skyblue;
-	text-decoration-color: skyblue;
+	color: #10CEF9;
+	text-decoration-color: #10CEF9;
 }
 
 /* secondo livello homepage, le due box */
@@ -116,7 +122,7 @@ header {
 	justify-content: space-evenly;
 	align-items: center;
 	padding: 30px 0;
-	background-color: #f3f6f4;
+	background-color: #EDF2FB;
 }
 
 .box {
@@ -124,8 +130,8 @@ header {
 	flex-direction: column;
 	flex-shrink: 1;
 	height: 300px;
-	width: 45%;
-	background-color: #D9E8DE;
+	width: 48%;
+	background-color: #D7E3FC;
 	border-radius: 10px;
 }
 
@@ -150,6 +156,7 @@ header {
 
 /*bottone all'interno della box News and updates*/
 .button-space {
+	
 	display: flex;
 	justify-content: flex-end;
 	padding-right: 20px;
@@ -158,7 +165,7 @@ header {
 
 .button-space button {
 	border-radius: 5px;
-	background-color: #;
+	background-color: transparent;
 	font-size: 15pt;
 	cursor: pointer;
 	display: flex;
@@ -166,10 +173,12 @@ header {
 	height: 40px;
 	padding: 10px;
 	border: none;
+	color: #B85000;
 }
 
-.button-space button:hover {
+.button-space button:hover :not(span) {
 	background-color: #;
+	text-decoration: underline;
 }
 
 .material-symbols-outlined {
@@ -181,37 +190,156 @@ header {
 }
 /*cards nel terzo livello*/
 .more_info {
-	background-color: #f3f6f4;
+	background-color: #EDF2FB;
 	padding: 50px 0;
 }
 
 .more_info h1 {
 	padding: 30px 0;
 	margin: 0;
+	font-family: Cormorant Garamond;
+	font-weight: 500;
+	text-align: center;
 }
 
 .card_container {
 	display: flex;
 	justify-content: space-evenly;
+	padding: 40px 0;
 
 }
 
 .card {
-  /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 30%;
   height: auto;
+  border-radius: 10px;
 }
 
-/* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-/* Add some padding inside the card container */
 .card_container .container {
+  font-size: 20pt;
   padding: 2px 16px;
+  border-radius: 10px;
+  font-weight: 300;
+}
+.card img {
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
 }
 
-@media max-width: ;
+@media screen and (max-width: 800px) {
+	.card_container {
+		flex-wrap: wrap;
+	}
+
+}
+/*footer*/
+footer {
+	background-color: #012A4A;
+}
+
+.footer_content {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: flex-start;
+	padding-bottom: 20px;
+	color: #E2EAFC;
+}
+
+.footer_content i {
+	color: #E2EAFC;
+}
+
+.footer_content a {
+	color: #E2EAFC;
+	font-size: 12pt;
+}
+
+.footer_content a:hover {
+	text-decoration: underline;
+}
+
+footer h4 {
+	font-size: 16pt;
+	font-weight: 400;
+}
+
+.first_column {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	justify-content: center;
+}
+
+.icons {
+	display: flex;
+	justify-content: space-evenly;
+	padding-top: 15px;
+} 
+
+i:visited {
+	color: #E2EAFC;
+}
+
+.second_column {
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	margin: 40px;
+	/*padding: 0 40px;*/
+}
+
+.third_column {
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+}
+
+footer button {
+	color: #022f40;	
+	align-self: center;
+	background-color: #FF801F;
+	border: solid;
+	border-color: #FF801F;
+	border-radius: 5px;
+	padding: 10px;
+	margin-left: 70px;
+	font-size: 15pt;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+footer button:hover {
+	background-color: transparent;
+	border: solid;
+	border-color: #FF801F;
+	color: #FF801F;
+}
+
+.footer_policy {
+	padding-top: 30px;
+	padding-bottom: 20px;
+	font-size: 10pt;
+}
+
+.footer_policy a {
+	padding: 0 20px;
+}
+
+.footer_policy a:hover {
+	text-decoration: underline;
+	color: #FFAE70;
+}
+
+.footer_policy a:visited {
+	color: #E2EAFC;
+}
