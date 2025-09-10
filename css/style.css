@@ -19,22 +19,22 @@ body {
 	
 }
 
-
+/*menù coi pulsanti della navigazione superiore*/
 .menu {
-	float: right;
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
 }
 .menu a {
 	
-	display: inline-block;
 	font-family: Work Sans, arial, sans-serif;
-	color: #f2f2f2;
+	color: white;
 	font-weight: 400;
 	text-align: center;
 	padding: 16px;
 	text-decoration: none;
 	font-size: 16pt;
-	margin: 0, 10px;
-	
+	margin: 0, 10px;	
 }
 
 .menu a:hover {
@@ -45,6 +45,10 @@ body {
 		border-bottom: 3px solid whitesmoke;
 }
 
+.menu_alternativo {
+	background-color: #013A63;
+}
+
 
 header {
 	float: left;
@@ -52,6 +56,21 @@ header {
 	font-size: 30pt;
 	color: #f2f2f2;
 	padding: 10px;
+}
+
+header a {
+	color: white;
+}
+
+header a:visited {
+	color: white;
+}
+
+.header_alternativo {
+	background-color: #013A63;
+	height: 60px;
+	padding: 0;
+	margin: 0;
 }
 
 .hero-image {
@@ -80,6 +99,9 @@ header {
 }
 
 .hero-text button {
+	width: fit-content;
+	display: flex;
+	align-items: center;
 	color: #293D38;
 	background-color: #FF740A;
   border: none;
@@ -96,24 +118,39 @@ header {
 	font-size: 18pt;
 	font-weight: 500;
 }
+.hero-text i {
+	display: inline-block;
+  overflow: hidden;
+  width: 0;              /* non occupa spazio */
+  opacity: 0;
+  transform: translateX(6px);
+  transition: all 0.3s ease
+} 
+
+.hero-text button:hover i {
+	width: auto;           /* si espande */
+  opacity: 1;
+  transform: translateX(0);
+  margin-left: 8px; 
+}
 
 .hero-text button:hover {
-  background-color: #CC5800;
+  background-color: #FF9747;
 }
 
 .hero-text p {
 	margin-top: 10%;
 }
 
-.hero-text a {
+.hero-text .help_link {
 	text-decoration: underline;
-	text-decoration-color: #06AED5;
-	color: #06AED5;
+	text-decoration-color: #10CEF9;
+	color: #10CEF9;
 }
 
-.hero-text a:hover {
-	color: #10CEF9;
-	text-decoration-color: #10CEF9;
+.hero-text .help_link:hover {
+	color: #60DEFB;
+	text-decoration-color: #60DEFB;
 }
 
 /* secondo livello homepage, le due box */
@@ -129,9 +166,9 @@ header {
 	display: flex;
 	flex-direction: column;
 	flex-shrink: 1;
-	height: 300px;
+	min-height: 300px;
 	width: 48%;
-	background-color: #D7E3FC;
+	background-color: #CCDBFD /*#D7E3FC*/;
 	border-radius: 10px;
 }
 
@@ -143,14 +180,14 @@ header {
 
 .box h1 {
 	font-size: 26pt;
-	padding-left: 10px;
+	margin: 20px 0 0 40px;
 	font-family: Cormorant Garamond, serif;
 }
 
 .box li {
 	font-size: 16pt;
-	list-style: none;
-	padding-left: 20px;
+	list-style-position: inside;
+	margin-left: 40px;
 	line-height: 1.5;
 }
 
@@ -159,26 +196,44 @@ header {
 	
 	display: flex;
 	justify-content: flex-end;
-	padding-right: 20px;
 	height: auto;
 }
 
 .button-space button {
+	display: inline-flex;
+	align-items: center;
 	border-radius: 5px;
-	background-color: transparent;
+	background-color: #468FAF;
 	font-size: 15pt;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	height: 40px;
 	padding: 10px;
+	margin: 30px;
 	border: none;
-	color: #B85000;
+	color: white;
 }
 
-.button-space button:hover :not(span) {
+.button-space i {
+	display: inline-block;
+  overflow: hidden;
+  width: 0;             
+  opacity: 0;
+  transform: translateX(6px);
+  transition: all 0.3s ease;
+}
+
+.button-space button:hover i {
+	width: auto;          
+  opacity: 1;
+  transform: translateX(0);
+  margin-left: 8px; 
+}
+
+.button-space button:hover {
 	background-color: #;
-	text-decoration: underline;
+	
 }
 
 .material-symbols-outlined {
@@ -198,7 +253,8 @@ header {
 	padding: 30px 0;
 	margin: 0;
 	font-family: Cormorant Garamond;
-	font-weight: 500;
+	font-weight: 700;
+	font-size: 40pt;
 	text-align: center;
 }
 
@@ -210,23 +266,31 @@ header {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
+  background-color: #D7E3FC;
   transition: 0.3s;
   width: 30%;
-  height: auto;
+  height: 60%;
   border-radius: 10px;
 }
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  cursor: pointer;
+  color: #E06100;
+ 	transition: 0.2s;
 }
 
-.card_container .container {
-  font-size: 20pt;
-  padding: 2px 16px;
+.card .container {
   border-radius: 10px;
-  font-weight: 300;
+  background-color: #D7E3FC;
 }
+
+.card .container h4 {
+	font-weight: 500;
+	font-size: 20pt;
+}
+
 .card img {
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
@@ -263,6 +327,8 @@ footer {
 
 .footer_content a:hover {
 	text-decoration: underline;
+	color: #FFA35C;
+	transition-duration: 0.3s;
 }
 
 footer h4 {
@@ -275,7 +341,7 @@ footer h4 {
 	flex-wrap: wrap;
 	align-content: center;
 	flex-direction: column;
-	padding: 0 40px;
+	margin: 0 40px;
 	justify-content: center;
 }
 
@@ -301,7 +367,7 @@ i:visited {
 	display: flex;
 	align-content: center;
 	flex-direction: column;
-	padding: 0 40px;
+	margin: 40px;
 }
 
 footer button {
@@ -323,6 +389,7 @@ footer button:hover {
 	border: solid;
 	border-color: #FF801F;
 	color: #FF801F;
+	transition: 0.2s;
 }
 
 .footer_policy {
