@@ -449,202 +449,64 @@ footer button:hover {
       background: white;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     .tab-content.active {
       display: block;
     }
 
-    /* Maschere di ricerca */
-    .search-form {
+
+  /*styling elementi maschera di ricerca forse definitiva*/
+   .search-row {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .search-form label {
-      font-weight: 600;
-    }
-
-    .search-form input, .search-form select, .search-form button {
-      padding: 8px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .search-form button {
-      background: #0077ff;
-      width: 20%;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .search-form button:hover {
-      background: #005fcc;
-    }
-
-/*styling dei bottoni dei cascading dropdowns nelle maschere di ricerca*/
-/* contenitore */
-.dropdown {
-	position: relative;
-  display: inline-block;
-}
-
-/* bottone */
-.dropbtn {
-	padding: /*12px 40px 12px*/ 16px; /* spazio extra a destra */
-  font-size: 1rem;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: white;
-  min-width: 90px;
-  text-align: left;
-  position: relative;
-}
-
-/* lista opzioni */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin-top: 4px;
-  z-index: 1;
-  min-width: 100%;
-}
-
-/* la freccia */
-.dropbtn::after {
-  content: "▾"; /* freccia verso il basso */
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 15pt;
-  pointer-events: none; /* la freccia non blocca il click */
-  transition: transform 0.3s;
-}
-
-/* quando il menu è aperto → freccia ruota */
-.dropdown.show .dropbtn::after {
-  transform: translateY(-50%) rotate(180deg);
-}
-
-    /* lista opzioni */
-.dropdown-content {
-  display: none;
-      position: absolute;
-      background-color: white;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-top: 4px;
-      z-index: 1;
-      min-width: 100%;
-    }
-
-    .dropdown-content div {
-      padding: 10px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .dropdown-content div:hover {
-      background-color: #eee;
-    }
-
-    .dropdown.show .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content div {
-      padding: 10px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .dropdown-content div:hover {
-      background-color: #eee;
-    }
-
-    /* mostra menu */
-    .dropdown.show .dropdown-content {
-      display: block;
-    }
-
-    .row {
-      display: flex;
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 10px;
       align-items: center;
     }
 
-    select, input {
+    select, input[type="text"] {
       padding: 6px;
-      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-width: 120px;
     }
 
     button {
       padding: 6px 12px;
-      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      background: #2d5e2c;
+      color: white;
+      font-weight: bold;
       cursor: pointer;
     }
 
-    .add-btn {
-      background: #0077ff;
-      color: white;
-      border: none;
-      border-radius: 6px;
+    button:hover {
+      background: #244b23;
     }
 
-    .add-btn:hover {
-      background: #005fcc;
+    .secondary-btn {
+      background: transparent;
+      color: #2d5e2c;
+      font-weight: bold;
+      cursor: pointer;
     }
 
-    .row {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 8px;
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-  }
+    .secondary-btn:hover {
+      text-decoration: underline;
+    }
 
-  select, input[type="text"] {
-    padding: 8px;
-    font-size: 0.95rem;
-    border-radius: 6px;
-    border: 1px solid #d0d0d0;
-  }
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .add_row {
+    	display: flex;
+    	justify-content: flex-start;
+    }
 
-  .btn {
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-size: 0.95rem;
-  }
-
-  .add-btn {
-    background: #0077ff;
-    color: white;
-  }
-
-  .del-btn {
-    background: #ff5c5c;
-    color: white;
-  }
-
-  /* spazio per i controlli in mobile */
-  @media (max-width:600px) {
-    .row { flex-direction: column; align-items: stretch; }
-    .row > * { width: 100%; }
-  }
+    .clear_search {
+    	display: flex;
+    	justify-content: flex-end;
+    }
