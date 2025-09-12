@@ -22,7 +22,268 @@
 			<a href="#">LOGIN</a>
 		</div>
 	<div class="research">
-		
+
+		<div class="tabs">
+	    	<button class="tab-button active" data-tab="tab1">Search the Canon</button>
+	    	<button class="tab-button" data-tab="tab2">N-grams</button>
+	    	<button class="tab-button" data-tab="tab3">Statistics</button>
+	  	</div>
+
+	  <!-- Contenuti -->
+	  	<div id="tab1" class="tab-content active">
+		    <div class="dropdown" id="dropdown">
+		    <button class="dropbtn" id="dropbtn">AND</button>
+		    <div class="dropdown-content">
+		      <div data-value="AND">AND</div>
+		      <div data-value="OR">OR</div>
+		      <div data-value="NOT">NOT</div>
+		    </div>
+		  </div>
+	  	</div>
+
+	  <div id="tab2" class="tab-content">
+	    
+	  </div>
+
+	  <div id="tab3" class="tab-content">
+	   <!-- <form class="search-form">
+	      <label for="data">Data</label>
+	      <input type="date" id="data">
+	      <button type="submit">Cerca</button>
+	    </form> -->
+	  </div>
+
+	  <!--script per far funzionare le tab nella pagina di ricerca-->
+	  <script> 
+	    const buttons = document.querySelectorAll(".tab-button");
+	    const contents = document.querySelectorAll(".tab-content");
+
+	    buttons.forEach(btn => {
+	      btn.addEventListener("click", () => {
+	        // rimuovo active da tutti
+	        buttons.forEach(b => b.classList.remove("active"));
+	        contents.forEach(c => c.classList.remove("active"));
+
+	        // attivo il tab cliccato
+	        btn.classList.add("active");
+	        document.getElementById(btn.dataset.tab).classList.add("active");
+	      });
+	    });
+	  </script>
+
+	  <!-- script per i cascading dropdown nelle maschere di ricerca -->
+	 <script>
+	    const dropdown = document.getElementById("dropdown");
+	    const button = document.getElementById("dropbtn");
+	    const options = dropdown.querySelectorAll(".dropdown-content div");
+
+	    // apertura/chiusura menu
+	    button.addEventListener("click", () => {
+	      dropdown.classList.toggle("show");
+	    });
+
+	    // click su un’opzione → cambia testo bottone
+	    options.forEach(opt => {
+	      opt.addEventListener("click", () => {
+	        button.textContent = opt.dataset.value; // etichetta aggiornata
+	        dropdown.classList.remove("show"); // chiudi menu
+	      });
+	    });
+
+	    // chiudi menu cliccando fuori
+	    document.addEventListener("click", (e) => {
+	      if (!dropdown.contains(e.target)) {
+	        dropdown.classList.remove("show");
+      }
+    });
+  </script>
+
+  <!-- qui saranno aggiunte le righe -->
+  <div id="rows-container"></div>
+
+  <!-- bottone che crea nuove righe (nessuna riga di default) -->
+  <button id="addRowBtn" class="btn add-btn"><i class="fa-solid fa-plus"></i></button>
+
+
+	<script>
+	const opzioniA = ["AND", "NOT", "OR"];
+	const opzioniB = ["Author", "Publisher", "Work", "Century"];
+
+	/* ===== RIFERIMENTI AGLI ELEMENTI DEL DOM =====
+	   Queste variabili "collegano" lo script agli elementi HTML.
+	*/
+	const container = document.getElementById("rows-container"); // dove appendere le righe
+	const addBtn = document.getElementById("addRowBtn");        // bottone "+"
+	const readBtn = document.getElementById("readValuesBtn");   // bottone per debug/lettura valori
+
+	/* ===== Funzione che crea una riga nuova =====
+	   Ogni chiamata a creaRiga() costruisce:
+	   - select1 (popolato con opzioniA)
+	   - select2 (popolato con opzioniB)  <-- INDEPENDENTE
+	   - input di testo
+	   - bottone elimina
+	   Poi aggiunge la riga al container e collega gli event listener necessari.
+	*/
+	function creaRiga() {
+	  // 1) crea il contenitore riga
+	  const row = document.createElement("div");
+	  row.className = "row";
+
+	  // 2) primo dropdown (select1)
+	  const select1 = document.createElement("select");
+	  // aggiungo una option vuota iniziale
+	  select1.innerHTML = `<option value="">AND</option>`;
+	  // popolo con opzioniA (indipendenti)
+	  opzioniA.forEach(item => {
+	    const opt = document.createElement("option");
+	    opt.value = item;
+	    opt.textContent = item;
+	    select1.appendChild(opt);
+	  });
+
+	  // 3) secondo dropdown (select2) — INDEPENDENTE: non dipende da select1
+	  const select2 = document.createElement("select");
+	  select2.innerHTML = `<option value="">Author</option>`;
+	  opzioniB.forEach(item => {
+	    const opt = document.createElement("option");
+	    opt.value = item;
+	    opt.textContent = item;
+	    select2.appendChild(opt);
+	  });
+
+	  // 4) campo di testo
+	  const input = document.createElement("input");
+	  input.type = "text";
+	  input.placeholder = "Inserisci testo...";
+
+	  // 5) bottone per eliminare la riga
+	  const delBtn = document.createElement("button");
+	  delBtn.type = "button";
+	  delBtn.className = "btn del-btn";
+	  delBtn.innerHTML = `
+	  <svg xmlns="http://www.w3.org/2000/svg" 
+	       width="16" height="16" viewBox="0 0 24 24" 
+	       fill="none" stroke="currentColor" 
+	       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	    <line x1="18" y1="6" x2="6" y2="18"/>
+	    <line x1="6" y1="6" x2="18" y2="18"/>
+	  </svg>`;
+
+	  // evento: clic su elimina rimuove la riga
+	  delBtn.addEventListener("click", () => {
+	    container.removeChild(row);
+	  });
+
+	  // append degli elementi nella riga, nell'ordine desiderato
+	  row.appendChild(select1);
+	  row.appendChild(select2);
+	  row.appendChild(input);
+	  row.appendChild(delBtn);
+
+	  // infine aggiungo la riga al container
+	  container.appendChild(row);
+
+	  // (opzionale) puoi collegare altri event listener ai select se vuoi reagire alle scelte
+	  // es. show value in console quando cambia select1:
+	  // select1.addEventListener("change", () => console.log("select1:", select1.value));
+	}
+
+	/* ===== collego il bottone +" alla funzione creaRiga =====
+	   Quando l'utente clicca addBtn, viene chiamata creaRiga e compare una riga nuova.
+	*/
+	addBtn.addEventListener("click", creaRiga);
+
+	/* ===== (opzionale) funzione di utilità per leggere tutti i valori attuali ====
+	   utile per capire i dati che hai creato dinamicamente.
+	*/
+	/*function leggiValori() {
+	  const righe = container.querySelectorAll(".row");
+	  const risultati = [];
+	  righe.forEach((r) => {
+	    const s1 = r.querySelector("select:nth-of-type(1)").value;
+	    const s2 = r.querySelector("select:nth-of-type(2)").value;
+	    const txt = r.querySelector('input[type="text"]').value;
+	    risultati.push({ select1: s1, select2: s2, text: txt });
+	  });
+	  console.log("Valori righe:", risultati);
+	}
+
+	// collega il bottone per leggere i valori (debug)
+	readBtn.addEventListener("click", leggiValori);*/
+
+	/* NOTA: non creiamo alcuna riga automaticamente qui — l'utente deve premere "+". */
+	</script>
+	<!-- questo pulsante aggiunge una riga di ricerca-->
+	<!-- <div id="rows-container"></div>
+
+  
+  <button class="add-btn" id="addRowBtn"><i class="fa-solid fa-plus"></i></button>
+
+  <script>
+    const container = document.getElementById("rows-container");
+    const addBtn = document.getElementById("addRowBtn");
+
+    // dati di esempio per i cascading dropdown
+    const opzioni = {
+      "Frutta": ["Mela", "Banana", "Arancia"],
+      "Verdura": ["Carota", "Pomodoro", "Zucchina"],
+      "Bevande": ["Acqua", "Caffè", "Tè"]
+    };
+
+    function creaRiga() {
+      // div contenitore della riga
+      const row = document.createElement("div");
+      row.className = "row";
+
+      // primo dropdown
+      const select1 = document.createElement("select");
+      select1.innerHTML = `<option value="">Seleziona categoria</option>`;
+      for (let cat in opzioni) {
+        const opt = document.createElement("option");
+        opt.value = cat;
+        opt.textContent = cat;
+        select1.appendChild(opt);
+      }
+
+      // secondo dropdown (vuoto all’inizio)
+      const select2 = document.createElement("select");
+      select2.innerHTML = `<option value="">Seleziona opzione</option>`;
+
+      // aggiorna select2 quando cambia select1
+      select1.addEventListener("change", () => {
+        const scelta = select1.value;
+        select2.innerHTML = `<option value="">Seleziona opzione</option>`;
+        if (opzioni[scelta]) {
+          opzioni[scelta].forEach(val => {
+            const opt = document.createElement("option");
+            opt.value = val;
+            opt.textContent = val;
+            select2.appendChild(opt);
+          });
+        }
+      });
+
+      // campo di testo
+      const input = document.createElement("input");
+      input.type = "text";
+      input.placeholder = "Scrivi qui...";
+
+      // aggiungo gli elementi alla riga
+      row.appendChild(select1);
+      row.appendChild(select2);
+      row.appendChild(input);
+
+      // metto la riga nel contenitore
+      container.appendChild(row);
+    }
+
+    // quando clicchi su "+"
+    addBtn.addEventListener("click", creaRiga);
+
+    // aggiungo una riga di default
+    creaRiga();
+  </script>-->
+	
 	</div>
 </body>
 </html>
