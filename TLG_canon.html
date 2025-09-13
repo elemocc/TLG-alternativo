@@ -21,6 +21,9 @@
 			<a href="#">HOW TO USE TLG</a>
 			<a href="#">LOGIN</a>
 		</div>
+		<div class="breadcrumbs">
+			
+		</div>
 	<div class="research">
 
 		<div class="tabs">
@@ -35,7 +38,7 @@
 	  		<div class="actions">
 	  			<div class="add_row">
 	    		<button id="addRowBtn"><i class="fa-solid fa-plus"></i></button></div>
-	    		<div class="clear_search"> <!-- questa div serve in modo da mandare a capo i due bottoni clear e search-->
+	    		<div class="clear_search"> 
 		    		<button id="clearBtn" class="secondary-btn">Clear All</button>
 		    		<button id="searchBtn">Search</button>
 	    		</div>
@@ -60,6 +63,9 @@
 		    function createRow() {
 		      const row = document.createElement("div");
 		      row.className = "search-row";
+
+		    const dd = document.createElement("select");
+			
 
 		      // dropdown per ambito
 		      const fieldSelect = document.createElement("select");
@@ -87,6 +93,7 @@
 
 		      // pulsante elimina riga
 		      const delBtn = document.createElement("button");
+		      delBtn.className = "del-btn";
 		      delBtn.innerHTML = `
 			  <svg xmlns="http://www.w3.org/2000/svg" 
 			       width="16" height="16" viewBox="0 0 24 24" 
@@ -95,26 +102,23 @@
 			    <line x1="18" y1="6" x2="6" y2="18"/>
 			    <line x1="6" y1="6" x2="18" y2="18"/>
 			  </svg>`;
-		      delBtn.style.background = "#2d5e2c";
 		      delBtn.addEventListener("click", () => row.remove());
 		      row.appendChild(delBtn);
 
 		      const dropdownOptions = {
-			  "Century": ["8th B.C", "7th B.C.", "6th B.C.", "5th B.C.", "4th B.C."],
-			  "Genre": ["Tragedy", "Comedy", "Epic", "Liric"]
+			  "Century": ["8th B.C.", "7th B.C.", "6th B.C.", "5th B.C.", "4th B.C."],
+			  "Genre": ["Tragedy", "Comedy", "Epic", "Lyric"]
 			};
 
 		      // funzione per aggiornare campo centrale
 		      function updateMiddle() {
 			  middleContainer.innerHTML = "";
 			  const field = fieldSelect.value;
-
 			  if (fields[field] === "text") {
 			    const input = document.createElement("input");
 			    input.type = "text";
 			    middleContainer.appendChild(input);
 			  } else if (fields[field] === "dropdown") {
-			    const dd = document.createElement("select");
 			    dropdownOptions[field].forEach(val => {
 			      const opt = document.createElement("option");
 			      opt.value = val;
@@ -172,6 +176,150 @@
 	      });
 	    });
 	  </script>
+	</div>
+	<!-- qua si trovano i filtri e i sultati della ricerca-->
+	<div class="page_content">
+		<!--sezione laterale coi filtri-->
+		<div class="filters">
+			<div class="sort">
+				<h4>Sort</h4>
+				<div class="dropdown">
+				    <button class="dropbtn">A-Z</button>
+				    <div class="dropdown-content">
+				      <div data-value="A-Z">A-Z</div>
+				      <div data-value="Z-A">Z-A</div>
+				      <div data-value="Latest-oldest">Latest-oldest</div>
+				      <div data-value="Oldest-latest">Oldest-latest</div>
+				    </div>
+				  </div>  
+			</div>
+			<div class="sort">
+				<h4>Results per page</h4>
+				<div class="dropdown">
+				<button class="dropbtn">10</button>
+					<div class="dropdown-content">
+					<div data-value="10">10</div>
+					<div data-value="30">30</div>
+					<div data-value="50">50</div>
+					<div data-value="70">70</div>
+					</div>
+				  	</div>
+			</div>
+			<h3>Filter by:</h3>
+			<div class="sort">
+				<h4>Author</h4>
+				<div class="dropdown">
+				<button class="dropbtn">Select...</button>
+					<div class="dropdown-content">
+						<div data-value="Homerus">Homerus</div>
+						<div data-value="Hesiodus">Hesiodus</div>
+						<div data-value="Alcaeus">Alcaeus</div>
+						<div data-value="Euripides">Euripides</div>
+					</div>
+				</div>	
+				</div>
+				<div class="sort">
+					<h4>Century</h4>
+					<div class="dropdown">
+					    <button class="dropbtn">Select...</button>
+					    <div class="dropdown-content">
+					      <div data-value="8 B.C.">8 B.C.</div>
+					      <div data-value="7 B.C.">7 B.C.</div>
+					      <div data-value="6 B.C.">6 B.C.</div>
+					      <div data-value="5 B.C.">5 B.C.</div>
+					    </div>
+					</div>	
+				</div>
+			</div>
+		<!--script per far funzionare i dropdown-->
+		<script>
+		    document.querySelectorAll(".dropdown").forEach(dropdown => {
+			  const button = dropdown.querySelector(".dropbtn");
+			  const options = dropdown.querySelectorAll(".dropdown-content div");
+
+			  // toggle apertura menu
+			  button.addEventListener("click", (e) => {
+			    e.stopPropagation(); // evita chiusura immediata
+			    dropdown.classList.toggle("show");
+			  });
+
+			  // selezione opzione
+			  options.forEach(opt => {
+			    opt.addEventListener("click", () => {
+			      button.textContent = opt.dataset.value;
+			      dropdown.classList.remove("show");
+			    });
+			  });
+
+			  // chiusura cliccando fuori
+			  document.addEventListener("click", (e) => {
+			    if (!dropdown.contains(e.target)) {
+			      dropdown.classList.remove("show");
+			    }
+			  });
+			});
+  		</script>
+  		<!--sezione coi risultati della ricerca-->
+		<div class="results">
+			<h2>17 results found</h2>
+			<hr>
+			<div class="item">
+				<h3>Author 1</h3>
+				<p>8 B.C.</p>
+				<p>Tragedy</p>
+				<p>3 works in the TLG</p>
+				<button>Show more</button>
+			</div>
+			<hr>
+			<div class="item">
+				<h3>Author 2</h3>
+				<p>4 B.C.</p>
+				<p>Lyric</p>
+				<p>2 works in the TLG</p>
+				<button>Show more</button>
+			</div>
+			<hr>
+			<div class="item">
+				<h3>Author 3</h3>
+				<p>6 B.C.</p>
+				<p>Comedy</p>
+				<p>10 works in the TLG</p>
+				<button>Show more</button>
+			</div>
+			<hr>
+			<div class="item">
+				<h3>Author 4</h3>
+				<p>2 A.D.</p>
+				<p>Geography</p>
+				<p>6 works in the TLG</p>
+				<button>Show more</button>
+			</div>
+			<hr>
+			<div class="item">
+				<h3>Author 5</h3>
+				<p>7 A.D.</p>
+				<p>Comedy</p>
+				<p>12 works in the TLG</p>
+				<button>Show more</button>
+			</div>
+			<hr>
+			<div class="item">
+				<h3>Author 6</h3>
+				<p>1 B.C.</p>
+				<p>Tragedy</p>
+				<p>1 work in the TLG</p>
+				<button>Show more</button>
+			</div>
+			<hr>
+		</div>
+	
+	</div>
+	<!--pagination-->
+	<div class="pagination">
+		<a href="#"><i class="fa-solid fa-angle-left"></i></a>
+		<a href="#" class="active">1</a>
+		<a href="#">2</a>
+		<a href="#"><i class="fa-solid fa-angle-right"></i></a>
 	</div>
 </body>
 </html>

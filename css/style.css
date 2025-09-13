@@ -7,7 +7,7 @@
 body {
 	font-family: "Noto Sans", arial, sans-serif;
 	font-size: 14pt;
-	color: #022f40;
+	color: #022f40; /*colore standard del testo*/
 	height: 100vh;
 	margin: 0;
 }
@@ -29,7 +29,7 @@ body {
 	
 	font-family: Work Sans, arial, sans-serif;
 	color: white;
-	font-weight: 400;
+	font-weight: 300;
 	text-align: center;
 	padding: 16px;
 	text-decoration: none;
@@ -412,6 +412,10 @@ footer button:hover {
 }
 
 /*Pagina TLG Canon*/
+.research {
+	padding: 0 5% 2% 5%;
+	background-color: #EDF2FB;
+}
 .tabs {
       display: flex;
       justify-content: flex-start;
@@ -461,39 +465,42 @@ footer button:hover {
       display: flex;
       gap: 10px;
       margin-bottom: 10px;
-      align-items: center;
     }
 
     select, input[type="text"] {
       padding: 6px;
-      border: 1px solid #ccc;
+      border: 1px solid #89C2D9;
       border-radius: 4px;
       min-width: 120px;
+      font-size: 14pt;
+      color: #022f40;
     }
 
-    button {
+
+   button {
       padding: 6px 12px;
       border: none;
       border-radius: 4px;
-      background: #2d5e2c;
+      background: #01497C;
       color: white;
-      font-weight: bold;
+      font-weight: 500;
       cursor: pointer;
+      font-size: 15pt;
     }
 
     button:hover {
-      background: #244b23;
+      background: #012A4A;
     }
 
     .secondary-btn {
       background: transparent;
-      color: #2d5e2c;
+      color: #01497C;
       font-weight: bold;
       cursor: pointer;
     }
 
     .secondary-btn:hover {
-      text-decoration: underline;
+		background-color: #D7E3FC ;
     }
 
     .actions {
@@ -509,4 +516,173 @@ footer button:hover {
     .clear_search {
     	display: flex;
     	justify-content: flex-end;
+    	gap: 10px;
     }
+
+    .del-btn {
+    	background-color: #01497C;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+/*permette di avere il contenuto diviso in due colonne (filtri e risultati di ricerca)*/
+.page_content {
+	display: flex;
+	background-color: #EDF2FB;
+}   
+
+ .filters {
+ 	width: 25%;
+ 	border: solid 1px #eee;
+ 	position: sticky;
+ 	top: 0;
+ 	height: fit-content;
+ 	background-color: white;
+ }
+
+ .sort {
+ 	display: flex;
+ 	align-items: center;
+ 	padding: 5px 15px;
+ 	gap: 10px;
+ }
+
+
+/* bottone dei filtri laterali con spazio per la freccia */
+.dropbtn {
+  padding: 10px 40px 10px 10px; /* spazio extra a destra */
+  font-size: 15pt;
+  cursor: pointer;
+	border: 1px solid #89C2D9;
+  border-radius: 8px;
+  background: #E2EAFC;
+  min-width: 80px;
+  text-align: left;
+  position: relative;
+  color: #022f40;
+}
+
+.dropbtn:hover {
+	background-color: #ABC4FF;
+}
+
+    /* la freccia */
+    .dropbtn::after {
+      content: "▾"; /* freccia verso il basso */
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.8rem;
+      pointer-events: none; /* la freccia non blocca il click */
+      transition: transform 0.3s;
+    }
+
+    /* quando il menu è aperto → freccia ruota */
+    .dropdown.show .dropbtn::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* lista opzioni */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+			border: 1px solid #89C2D9;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-top: 4px;
+      z-index: 1;
+      min-width: 100%;
+    }
+
+    .dropdown-content div {
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .dropdown-content div:hover {
+      background-color: #ABC4FF;
+    }
+
+    .dropdown.show .dropdown-content {
+      display: block;
+    }
+
+ .filters h3 {
+ 	padding-left: 15px;
+ 	font-size: 18pt;
+ }
+
+ .filters h4 {
+ 	font-weight: 500;
+ }
+
+/*styling zona dei risultati*/
+.results {
+	background-color: #EDF2FB;
+	width: 75%;
+}
+
+.results h2 {
+ 	font-family: Cormorant Garamond, serif;
+ 	font-weight: 700;
+ 	font-size: 40pt;
+ 	padding: 10px 30px ;
+ 	margin: 0;
+ }
+
+.item {
+	display: flex;
+	flex-direction: column;
+	padding: 10px 40px;
+}
+
+.item button {
+	width: fit-content;
+	align-self: flex-end;
+	margin-bottom: 10px;
+}
+
+.item h3 {
+	font-family: Cormorant Garamond, sans-serif;
+	font-size: 25pt;
+	font-weight: 700;
+	margin: 0;
+}
+
+.item p {
+	margin: 0;
+	padding:5px 20px ;
+}
+
+hr {
+	width: 95%;
+	justify-self: left;
+}
+
+/*styling pagination*/
+.pagination {
+	width: 100%;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+	background-color: #ddd;
+}
