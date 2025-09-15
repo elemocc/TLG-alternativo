@@ -33,50 +33,61 @@
 			<p>In this page <b>you can learn how to use every page and tool</b>. If something isn't clear yet, watch our video tutorials to see sample searches on TLG</p>
 			<hr>
 		</div>
-		<!--<div class="help_tabs">
-			<div class="tab">
-				<button class="tablinks" onclick="openCity(event, 'London')">London</button>
-				<button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-			  	<button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+		<!--tabs con informazioni-->
+		<div class="tabs-container">
+			<div class="tabs">
+				<div class="tab active">Search the TLG Canon</div>
+				<div class="tab">N-Grams</div>
+				<div class="tab">Statistics</div>
+				<div class="tab">Lexica</div>
 			</div>
-
-			<div id="London" class="tabcontent">
-			  	<h3>London</h3>
-			  	<p>London is the capital city of England.</p>
-			</div>
-
-			<div id="Paris" class="tabcontent">
-			  	<h3>Paris</h3>
-			 	<p>Paris is the capital of France.</p>
-			</div>
-
-			<div id="Tokyo" class="tabcontent">
-			  	<h3>Tokyo</h3>
-			  	<p>Tokyo is the capital of Japan.</p>
-			</div>
+			<div class="content-container">
+				<div class="content active">
+					<h3>Search the TLG Canon</h3>
+					<p>Lorem ipsum dolor sit amet. Sit possimus modi in ducimus cumque est nobis quisquam qui fuga libero eos velit quaerat. Ut perspiciatis omnis ex assumenda totam est adipisci sapiente quo natus sequi qui provident dignissimos.</p>
+					<p>In eligendi sint hic eligendi velit sed vero galisum. Eos aperiam consequuntur id veritatis soluta sed asperiores adipisci aut praesentium unde.</p>
+				</div>
+				<div class="content">
+					<h3>N-Grams</h3>
+					<p>Lorem ipsum dolor sit amet. Sit possimus modi in ducimus cumque est nobis quisquam qui fuga libero eos velit quaerat. Ut perspiciatis omnis ex assumenda totam est adipisci sapiente quo natus sequi qui provident dignissimos.</p>
+					<p>In eligendi sint hic eligendi velit sed vero galisum. Eos aperiam consequuntur id veritatis soluta sed asperiores adipisci aut praesentium unde.</p>
+				</div>
+				<div class="content">
+					<h3>Statistics</h3>
+					<p>Lorem ipsum dolor sit amet. Sit possimus modi in ducimus cumque est nobis quisquam qui fuga libero eos velit quaerat. Ut perspiciatis omnis ex assumenda totam est adipisci sapiente quo natus sequi qui provident dignissimos.</p>
+					<p>In eligendi sint hic eligendi velit sed vero galisum. Eos aperiam consequuntur id veritatis soluta sed asperiores adipisci aut praesentium unde.</p>
+				</div>
+				<div class="content">
+					<h3>Lexica</h3>
+					<p>Lorem ipsum dolor sit amet. Sit possimus modi in ducimus cumque est nobis quisquam qui fuga libero eos velit quaerat. Ut perspiciatis omnis ex assumenda totam est adipisci sapiente quo natus sequi qui provident dignissimos.</p>
+					<p>In eligendi sint hic eligendi velit sed vero galisum. Eos aperiam consequuntur id veritatis soluta sed asperiores adipisci aut praesentium unde.</p>
+				</div>
+			</div>	
 		</div>
+		<!--script per far funzionare le tabs-->
 		<script>
-			function openCity(evt, cityName) {
-			// Declare all variables
-			var i, tabcontent, tablinks;
+			const tabs = document.querySelectorAll(".tabs-container .tab");
+			const contents = document.querySelectorAll(".tabs-container .content");
 
-			// Get all elements with class="tabcontent" and hide them
-			tabcontent = document.getElementsByClassName("tabcontent");
-			for (i = 0; i < tabcontent.length; i++) {
-			tabcontent[i].style.display = "none";
-			}
+			const removeActiveClass = () => {
+				tabs.forEach((t) => {
+					t.classList.remove("active");
 
-			// Get all elements with class="tablinks" and remove the class "active"
-			tablinks = document.getElementsByClassName("tablinks");
-			for (i = 0; i < tablinks.length; i++) {
-			tablinks[i].className = tablinks[i].className.replace(" active", "");
-			}
+				});
 
-			// Show the current tab, and add an "active" class to the link that opened the tab
-			document.getElementById(cityName).style.display = "block";
-			evt.currentTarget.className += " active";
-			}
-		</script>-->
+			contents.forEach(c => {
+				c.classList.remove("active");
+				})
+			};
+
+			tabs.forEach((t, i) => {
+				t.addEventListener("click", () => {
+					removeActiveClass();
+					contents[i].classList.add("active");
+					t.classList.add("active");
+				});
+			});
+		</script>
 		<footer>
 			<div class="footer_content">
 				<div class="first_column">
