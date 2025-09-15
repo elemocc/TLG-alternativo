@@ -518,53 +518,68 @@ footer button:hover {
     }
 
 
-   button {
+#searchBtn {
       padding: 6px 12px;
       border: none;
       border-radius: 4px;
-      background: #01497C;
-      color: white;
+      background: #FF740A;
+      color: #022f40;
       font-weight: 500;
       cursor: pointer;
       font-size: 15pt;
     }
 
-    button:hover {
-      background: #012A4A;
-    }
+#searchBtn:hover {
+	background: #012A4A;
+}
 
-    .secondary-btn {
-      background: transparent;
-      color: #01497C;
-      font-weight: bold;
-      cursor: pointer;
-    }
+#clearBtn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #022f40;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 15pt;
+}
 
-    .secondary-btn:hover {
-		background-color: #D7E3FC ;
-    }
+#clearBtn:hover {
+	background-color: #D7E3FC ;
+}
 
-    .actions {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    .add_row {
-    	display: flex;
-    	justify-content: flex-start;
-    }
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-    .clear_search {
-    	display: flex;
-    	justify-content: flex-end;
-    	gap: 10px;
-    }
+.add_row {
+  display: flex;
+  justify-content: flex-start;
+}
 
-    .del-btn {
-    	background-color: #01497C;
-    }
+.clear_search {
+	display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
 
-    .dropdown {
+.del-btn {
+  background-color: #01497C;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+}
+
+#addRowBtn {
+	padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdown {
       position: relative;
       display: inline-block;
     }
@@ -575,7 +590,7 @@ footer button:hover {
 	background-color: #EDF2FB;
 }   
 
- .filters {
+.filters {
  	width: 25%;
  	border: solid 1px #eee;
  	position: sticky;
@@ -586,8 +601,8 @@ footer button:hover {
  	border-radius: 5px;
  }
 
- .sort {
- 	display: flex;
+.sort {
+	display: flex;
  	align-items: center;
  	padding: 5px 15px;
  	gap: 10px;
@@ -612,22 +627,22 @@ footer button:hover {
 	background-color: #ABC4FF;
 }
 
-    /* la freccia */
-    .dropbtn::after {
-      content: "▾"; /* freccia verso il basso */
-      position: absolute;
-      right: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0.8rem;
-      pointer-events: none; /* la freccia non blocca il click */
-      transition: transform 0.3s;
-    }
+/* la freccia */
+.dropbtn::after {
+  content: "▾"; /* freccia verso il basso */
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  pointer-events: none; /* la freccia non blocca il click */
+  transition: transform 0.3s;
+}
 
-    /* quando il menu è aperto → freccia ruota */
-    .dropdown.show .dropbtn::after {
-      transform: translateY(-50%) rotate(180deg);
-    }
+/* quando il menu è aperto → freccia ruota */
+.dropdown.show .dropbtn::after {
+  transform: translateY(-50%) rotate(180deg);
+}
 
     /* lista opzioni */
     .dropdown-content {
@@ -759,8 +774,8 @@ hr {
 
 .tabs-container {
 	display: flex;
-	/*box-shadow: 0 4px 40px -8px rgba(0, 0, 0, 0.2);*/
 	background-color: #EDF2FB;
+	/*padding-bottom: 10%;*/
 }
 
 .tabs-container .tabs {
@@ -768,14 +783,18 @@ hr {
 	flex-direction: column;
 	width: 25%;
 	height: fit-content;
+	margin-left: 3%;
 }
 
 .tabs-container .tab {
-	padding: 24px 22px;
+	padding: 24px 10px;
 	background-color: #222;
 	color: white;
 	width: 100%;
 	cursor: pointer;
+	border-radius: 5px;
+	margin-bottom: 5px;
+	font-weight: 600;
 }
 
 .tabs-container .tab.active {
@@ -785,17 +804,25 @@ hr {
 
 .tabs-container .content-container {
 	background-color: #f6fdff;
-	margin-right: 20px;
+	margin-right: 5%;
+	margin-bottom: 5%;
+	width: 75%;
+	border-radius: 5px;
 }
 .tabs-container .content-container .content {
-		display: none;
-		padding: 30px;
+	display: none;
+	padding: 10px 30px;
 }
 
 .content h3 {
 	font-family: Cormorant Garamond, serif;
 	font-weight: 700;
-	font-size: 18pt;
+	font-size: 30pt;
+}
+
+.content p {
+	font-size: 16pt;
+	line-height: 1.5;
 }
 
 
