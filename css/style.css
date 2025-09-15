@@ -73,6 +73,47 @@ header a:visited {
 	margin: 0;
 }
 
+/*styling delle breadcrumbs*/
+.breadcrumbs {
+	background-color: #EDF2FB;
+	margin: 0;
+}
+ul.breadcrumbs {
+  padding: 10px 16px;
+  list-style: none;
+}
+
+ul.breadcrumbs li {
+  display: inline;
+  font-size: 14pt;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumbs li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumbs li a {
+  text-decoration: none;
+  color: #022f40;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumbs li a:hover {
+  color: red;
+}
+
+ul.breadcrumbs li a:visited {
+  color: #022f40;
+}
+
+ul.breadcrumbs li a.active {
+	text-decoration: underline;
+}
+
 .hero-image {
 	background-image:linear-gradient(rgba(0, 0, 0, 0.3)), url(../images/cariatidi.jpg);
 	height: 80%;
@@ -159,7 +200,7 @@ header a:visited {
 	justify-content: space-evenly;
 	align-items: center;
 	padding: 30px 0;
-	background-color: #EDF2FB; /*il colore chiaro dello sfondo di ovunque*/
+	background-color: #sf; /*il colore chiaro dello sfondo di ovunque*/
 }
 
 .box {
@@ -418,7 +459,7 @@ footer button:hover {
 }
 .tabs {
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-evenly;
       /*border-bottom: 2px solid #ddd;
       margin-bottom: 20px;*/
     }
@@ -541,6 +582,8 @@ footer button:hover {
  	top: 0;
  	height: fit-content;
  	background-color: white;
+ 	margin-left: 5px;
+ 	border-radius: 5px;
  }
 
  .sort {
@@ -668,6 +711,9 @@ hr {
 /*styling pagination*/
 .pagination {
 	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 15px;
 }
 
 .pagination a {
@@ -685,4 +731,73 @@ hr {
 
 .pagination a:hover:not(.active) {
 	background-color: #ddd;
+}
+
+.intro {
+	background-color: #EDF2FB;
+	padding: 20px;
+}
+
+.intro h2 {
+	font-family: Cormorant Garamond, serif;
+ 	font-weight: 700;
+ 	font-size: 40pt;
+ 	padding: 10px 30px;
+ 	margin: 0;
+}
+
+.intro p {
+	font-size: 18pt;
+	padding: 10px 40px;
+	margin: 0;
+}
+
+.intro hr {
+	width: 98%;
+}
+/*styling delle tabs nella pagina how to use tlg*/
+.help_tabs {
+	display: flex;
+}
+
+.help_tabs .tab {
+  /*float: left;*/
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 300px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.help_tabs .tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.help_tabs .tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.help_tabs .tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.help_tabs .tabcontent {
+  /*float: right;*/
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 70%;
+  border-left: none;
+  height: 300px;
 }
