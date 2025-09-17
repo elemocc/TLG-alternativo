@@ -13,14 +13,46 @@ body {
 }
 
 
-.navbar {
+/*menù coi pulsanti della navigazione superiore*/
+nav {
+	display: flex;
+	justify-content: flex-end;
+	align-content: center;
+	align-items: center;
+	background-color: #013A63;
+	margin: 0;
 	overflow: hidden;
-	background-color: #1F4743;
-	
 }
 
-/*menù coi pulsanti della navigazione superiore*/
-.menu {
+nav a {
+	font-family: Work Sans, arial, sans-serif;
+	color: white;
+	font-weight: 400;
+	text-align: center;
+	padding: 5px 16px;
+	text-decoration: none;
+	font-size: 16pt;
+	margin: 0 5px;	
+}
+nav a:hover {
+	border-bottom: 3px solid whitesmoke;
+}
+
+nav a.active {
+	border-bottom: 3px solid whitesmoke;
+}
+
+nav img {
+	margin-right: auto;
+	padding: 10px;
+	height: 50px;
+	align-items: center;
+}
+
+nav.nav_home {
+	background-color: transparent;
+}
+/*.menu {
 	display: flex;
 	justify-content: flex-end;
 	flex-wrap: wrap;
@@ -71,7 +103,7 @@ header a:visited {
 	height: 60px;
 	padding: 0;
 	margin: 0;
-}
+}*/
 
 /*styling delle breadcrumbs*/
 .breadcrumbs {
@@ -114,11 +146,11 @@ ul.breadcrumbs li a:visited {
 	background-image:linear-gradient(rgba(0, 0, 0, 0.3)), url(../images/cariatidi.jpg);
 	height: 80%;
 	background-position: center;
-  	background-repeat: no-repeat;
-  	background-size: cover;
-  	position: relative;
-
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
+
 .hero-text {
 	text-align: left;
 	top: 50%;
@@ -179,8 +211,8 @@ ul.breadcrumbs li a:visited {
 
 .hero-text .help_link {
 	text-decoration: underline;
-	text-decoration-color: #10CEF9;
-	color: #10CEF9;
+	text-decoration-color: #60DEFB;
+	color: #60DEFB;
 }
 
 .hero-text .help_link:hover {
@@ -222,7 +254,7 @@ ul.breadcrumbs li a:visited {
 .box li {
 	font-size: 16pt;
 	list-style-position: inside;
-	margin-left: 40px;
+	margin: 0 10px 0 40px;
 	line-height: 2;
 }
 
@@ -452,79 +484,82 @@ footer button:hover {
 	background-color: #EDF2FB;
 }
 .tabs {
-      display: flex;
-      justify-content: space-evenly;
-      /*border-bottom: 2px solid #ddd;
-      margin-bottom: 20px;*/
-    }
+  display: flex;
+  justify-content: space-evenly;
+}
 
     /* Pulsanti dei tab */
-    .tab-button {
-      border-radius: 5px;
-      margin: 10px;
-      flex: 1;
-      padding: 12px;
-      cursor: pointer;
-      background: #eee;
-      border: none;
-      outline: none;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
+.tab-button {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: 10px 10px 0 10px;
+  flex: 1;
+  padding: 12px;
+  cursor: pointer;
+  background: #CCDBFD;
+  border: none;
+  outline: none;
+  font-size: 15pt;
+  transition: background 0.3s;
+}
 
-    .tab-button:hover {
-      background: #ddd;
-    }
+.tab-button:hover {
+  background: #b1c7fc;
+}
 
-    .tab-button.active {
-      background: #0077ff;
-      color: white;
-      font-weight: bold;
-    }
+.tab-button.active {
+  background: white;
+  color: black;
+  font-weight: bold;
+  border-left: solid #5885da;
+  border-top: solid  #5885da;
+  border-right: solid  #5885da;
+}
 
-    /* Contenuto dei tab */
-    .tab-content {
-      display: none;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-    }
+/* Contenuto dei tab */
+.tab-content {
+  display: none;
+  background: white;
+  padding: 40px 30px 20px 30px;
+  border-radius: 8px;
+}
 
-    .tab-content.active {
-      display: block;
-    }
+.tab-content.active {
+  display: block;
+}
 
 
-  /*styling elementi maschera di ricerca forse definitiva*/
-   .search-row {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
+/*styling elementi maschera di ricerca*/
+.search-row {
+  display: flex;
+  flex-shrink: 1;
+  gap: 10px;
+  margin-bottom: 10px;
+}
 
-    select, input[type="text"] {
-      padding: 6px;
-      border: 1px solid #89C2D9;
-      border-radius: 4px;
-      min-width: 120px;
-      font-size: 14pt;
-      color: #022f40;
-    }
+select, input[type="text"] {
+  padding: 6px;
+  border: 1px solid #89C2D9;
+  border-radius: 4px;
+  min-width: 120px;
+  font-size: 14pt;
+  color: #022f40;
+}
 
 
 #searchBtn {
-      padding: 6px 12px;
-      border: none;
-      border-radius: 4px;
-      background: #FF740A;
-      color: #022f40;
-      font-weight: 500;
-      cursor: pointer;
-      font-size: 15pt;
-    }
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background: #FF740A;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 15pt;
+}
 
 #searchBtn:hover {
-	background: #012A4A;
+	background: #ff9747;
 }
 
 #clearBtn {
@@ -539,7 +574,7 @@ footer button:hover {
 }
 
 #clearBtn:hover {
-	background-color: #D7E3FC ;
+	background-color: whitesmoke ;
 }
 
 .actions {
@@ -564,6 +599,7 @@ footer button:hover {
   padding: 6px 12px;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 #addRowBtn {
@@ -571,6 +607,11 @@ footer button:hover {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  background-color: #D7E3FC;
+}
+
+#addRowBtn:hover {
+	background-color: #b1c7fc;
 }
 
 .dropdown {
@@ -610,7 +651,7 @@ footer button:hover {
   cursor: pointer;
 	border: 1px solid #89C2D9;
   border-radius: 8px;
-  background: #E2EAFC;
+  background: #d7e3fc;
   min-width: 80px;
   text-align: left;
   position: relative;
@@ -618,7 +659,7 @@ footer button:hover {
 }
 
 .dropbtn:hover {
-	background-color: #ABC4FF;
+	background-color: #b1c7fc;
 }
 
 /* la freccia */
@@ -696,8 +737,15 @@ footer button:hover {
 
 .item button {
 	width: fit-content;
-	align-self: flex-end;
-	margin-bottom: 10px;
+	padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #FF740A;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 13pt;
+  margin-left: auto;
 }
 
 .item h3 {
@@ -719,7 +767,6 @@ hr {
 
 /*styling pagination*/
 .pagination {
-	width: 100%;
 	display: flex;
 	justify-content: center;
 	padding: 15px;
@@ -782,18 +829,22 @@ hr {
 
 .tabs-container .tab {
 	padding: 24px 10px;
-	background-color: #222;
+	background-color: #013A63;
 	color: white;
 	width: 100%;
 	cursor: pointer;
 	border-radius: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	font-weight: 600;
+
 }
 
 .tabs-container .tab.active {
 	background-color: #f6fdff;
 	color: black;
+	border-left: solid #5885da;
+  border-top: solid #5885da;
+  border-bottom: solid #5885da;
 }
 
 .tabs-container .content-container {

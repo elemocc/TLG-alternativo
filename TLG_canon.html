@@ -12,21 +12,21 @@
 	<script src="https://kit.fontawesome.com/f54a36df8b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<header class="header_alternativo">
-		<a href="index.html">TLG</a>
-	</header>
-		<div class="menu menu_alternativo">
-			<a href="index.html">HOME</a>
-			<a class="active">TLG CANON</a>
-			<a href="#">LEXICA</a>
-			<a href="how_to_use_TLG.html">HOW TO USE TLG</a>
-			<a href="#">LOGIN</a>
-		</div>
-		<!--breadcrumbs-->
-		<ul class="breadcrumbs">
-		  <li><a href="index.html">Home</a></li>
-		  <li>TLG Canon</li>
-		</ul>
+	<nav>
+		<img src="images/TLG_logo.png">
+		<a href="index.html">HOME</a>
+		<a class="active">TLG CANON</a>
+		<a href="#">LEXICA</a>
+		<a href="how_to_use_TLG.html">HOW TO USE TLG</a>
+		<a href="#"><i class="fa-solid fa-user"></i>LOGIN</a>
+	</nav>
+	<!--breadcrumbs-->
+	<ul class="breadcrumbs">
+		<li><a href="index.html">Home</a></li>
+		<li>TLG Canon</li>
+	</ul>
+
+	<!--area di ricerca-->
 	<div class="research">
 
 		<div class="tabs">
@@ -35,7 +35,7 @@
 	    	<button class="tab-button" data-tab="tab3">Statistics</button>
 	  	</div>
 
-	  <!-- Contenuti -->
+	<!-- Contenuti -->
 	  	<div id="tab1" class="tab-content active">
 			<div id="search-container"></div>
 	  		<div class="actions">
@@ -101,7 +101,7 @@
 		      delBtn.innerHTML = `
 			  <svg xmlns="http://www.w3.org/2000/svg" 
 			       width="16" height="16" viewBox="0 0 24 24" 
-			       fill="none" stroke="currentColor" 
+			       fill="none" stroke="white" 
 			       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 			    <line x1="18" y1="6" x2="6" y2="18"/>
 			    <line x1="6" y1="6" x2="18" y2="18"/>
