@@ -774,14 +774,18 @@ select, input[type="text"] {
 	margin-right: 5%;
 	padding: 5px;
 	height: fit-content;
-	border: none;
-	background-color: #;
+	border: solid #01497C;
+	color: #01497C;
 	font-size: 13pt;
-	border-radius: 6px;
+	border-radius: 5px;
+	background-color: transparent;
 }
 
 .results_title button:hover {
 	cursor: pointer;
+	background-color: #01497C;
+	color: white;
+	transition: 0.2s;
 }
 
 .item {
