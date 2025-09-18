@@ -774,7 +774,7 @@ select, input[type="text"] {
 	margin-right: 5%;
 	padding: 5px;
 	height: fit-content;
-	border: solid #01497C;
+	border: none /*solid #01497C*/;
 	color: #01497C;
 	font-size: 13pt;
 	border-radius: 5px;
