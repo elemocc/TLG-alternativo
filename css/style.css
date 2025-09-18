@@ -42,8 +42,17 @@ nav a.active {
 	border-bottom: 3px solid whitesmoke;
 }
 
-nav img {
+nav .logo {
 	margin-right: auto;
+	padding: 0;
+}
+
+nav .logo:hover {
+	border: none;
+}
+
+.logo img {
+	margin: 0;
 	padding: 10px;
 	height: 50px;
 	align-items: center;
@@ -213,11 +222,16 @@ ul.breadcrumbs li a:visited {
 	text-decoration: underline;
 	text-decoration-color: #60DEFB;
 	color: #60DEFB;
+	text-align: center;
+	align-items: center;
 }
 
-.hero-text .help_link:hover {
-	color: #60DEFB;
-	text-decoration-color: #60DEFB;
+.hero-text .help_link:hover i {
+	width: auto;           /* si espande */
+  opacity: 1;
+  transform: translateX(0);
+  margin-left: 2px; 
+  text-decoration: underline;
 }
 
 /* secondo livello homepage, le due box */
@@ -488,7 +502,7 @@ footer button:hover {
   justify-content: space-evenly;
 }
 
-    /* Pulsanti dei tab */
+/* Pulsanti dei tab */
 .tab-button {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -530,6 +544,26 @@ footer button:hover {
 
 
 /*styling elementi maschera di ricerca*/
+.tab_title {
+	display: flex;
+	align-items: center;	
+}
+
+.tab_title h3 {
+	font-family: Cormorant Garamond;
+	font-size: 25pt;
+	font-weight: 700;
+}
+
+.tab_title i {
+	color: #FF740A;
+	margin-left: 10px;
+}
+
+.tab_title a:visited {
+	color: #FF740A;
+}
+
 .search-row {
   display: flex;
   flex-shrink: 1;
@@ -721,13 +755,34 @@ select, input[type="text"] {
 	width: 75%;
 }
 
-.results h2 {
+.results_title {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.results_title h2 {
  	font-family: Cormorant Garamond, serif;
  	font-weight: 700;
  	font-size: 40pt;
  	padding: 10px 30px ;
  	margin: 0;
  }
+
+.results_title button {
+	margin-left: auto;
+	margin-right: 5%;
+	padding: 5px;
+	height: fit-content;
+	border: none;
+	background-color: #;
+	font-size: 13pt;
+	border-radius: 6px;
+}
+
+.results_title button:hover {
+	cursor: pointer;
+}
 
 .item {
 	display: flex;

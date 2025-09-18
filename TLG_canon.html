@@ -13,7 +13,7 @@
 </head>
 <body>
 	<nav>
-		<img src="images/TLG_logo.png">
+		<a href="index.html" class="logo"><img src="images/TLG_logo.png"></a>
 		<a href="index.html">HOME</a>
 		<a class="active">TLG CANON</a>
 		<a href="#">LEXICA</a>
@@ -28,7 +28,6 @@
 
 	<!--area di ricerca-->
 	<div class="research">
-
 		<div class="tabs">
 	    	<button class="tab-button active" data-tab="tab1">Search the Canon</button>
 	    	<button class="tab-button" data-tab="tab2">N-grams</button>
@@ -37,6 +36,8 @@
 
 	<!-- Contenuti -->
 	  	<div id="tab1" class="tab-content active">
+	  		<div class="tab_title"><h3>Search the TLG Canon</h3><a href="how_to_use_TLG.html#tab2" title="Learn how it works" target="blank"><i class="fa-solid fa-question"></i></a>
+	  		</div>
 			<div id="search-container"></div>
 	  		<div class="actions">
 	  			<div class="add_row">
@@ -151,13 +152,15 @@
 		    createRow();
   	</script>
 
-	  <div id="tab2" class="tab-content">
-	    
-	  </div>
+	<div id="tab2" class="tab-content">
+		<div class="tab_title"><h3>N-Grams</h3><a href="how_to_use_TLG.html#tab3" title="Learn how it works" target="blank"><i class="fa-solid fa-question"></i></a>
+	  	</div>
+	</div>
 
-	  <div id="tab3" class="tab-content">
-	   
-	  </div>
+	<div id="tab3" class="tab-content">
+	  	<div class="tab_title"><h3>Statistics</h3><a href="how_to_use_TLG.html#tab4" title="Learn how it works" target="blank"><i class="fa-solid fa-question"></i></a>
+		</div>
+	</div>
 
 	  <!--script per far funzionare le tab nella pagina di ricerca-->
 	  <script> 
@@ -261,7 +264,11 @@
   		</script>
   		<!--sezione coi risultati della ricerca-->
 		<div class="results">
-			<h2>17 results found</h2>
+			<div class="results_title">
+				<h2>17 results found</h2>
+				<button><i class="fa-regular fa-bookmark"></i>Save this search</button>
+			</div>
+			
 			<div class="items">
 				<hr>
 				<div class="item">
