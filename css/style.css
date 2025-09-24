@@ -194,12 +194,12 @@ ul.breadcrumbs li a:visited {
 	font-size: 18pt;
 	font-weight: 500;
 }
-.hero-text i {
+.hero-text button i {
 	display: inline-block;
   overflow: hidden;
   width: 0;              /* non occupa spazio */
   opacity: 0;
-  transform: translateX(6px);
+  /*transform: translateX(6px);*/
   transition: all 0.3s ease
 } 
 
