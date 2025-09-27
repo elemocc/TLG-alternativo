@@ -1,4 +1,3 @@
-<!--mancano le breadcrumbs, il pulsante per salvare e i tooltips; va corretta la navbar-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,12 +35,15 @@
 
 	<!-- Contenuti -->
 	  	<div id="tab1" class="tab-content active">
-	  		<div class="tab_title"><h3>Search the TLG Canon</h3><a href="how_to_use_TLG.html#tab2" title="Learn how it works" target="blank"><i class="fa-solid fa-question"></i></a>
+	  		<div class="tab_title"><h3>Search the TLG Canon</h3><a href="how_to_use_TLG.html#tab2" target="blank"><div class="tooltip"><i class="fa-solid fa-question"></i></a><span class="tooltiptext">Learn how it works</span></div>
 	  		</div>
 			<div id="search-container"></div>
 	  		<div class="actions">
 	  			<div class="add_row">
-	    		<button id="addRowBtn"><i class="fa-solid fa-plus"></i></button>
+	  				<div class="tooltip">
+		    			<button id="addRowBtn"><i class="fa-solid fa-plus"></i></button>
+		    			<span class="tooltiptext bottom">Add a new row</span>
+					</div>
 	    		</div>
 	    		<div class="clear_search"> 
 		    		<button id="clearBtn" class="secondary-btn">Clear All</button>
@@ -102,8 +104,8 @@
 		      delBtn.innerHTML = `
 			  <svg xmlns="http://www.w3.org/2000/svg" 
 			       width="16" height="16" viewBox="0 0 24 24" 
-			       fill="none" stroke="white" 
-			       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			       fill="none" stroke="#022f40" 
+			       stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
 			    <line x1="18" y1="6" x2="6" y2="18"/>
 			    <line x1="6" y1="6" x2="18" y2="18"/>
 			  </svg>`;
@@ -152,15 +154,22 @@
 		    createRow();
   	</script>
 
-	<div id="tab2" class="tab-content">
-		<div class="tab_title"><h3>N-Grams</h3><a href="how_to_use_TLG.html#tab3" title="Learn how it works" target="blank"><i class="fa-solid fa-question"></i></a>
-	  	</div>
-	</div>
-
-	<div id="tab3" class="tab-content">
-	  	<div class="tab_title"><h3>Statistics</h3><a href="how_to_use_TLG.html#tab4" title="Learn how it works" target="blank"><i class="fa-solid fa-question"></i></a>
+		<div id="tab2" class="tab-content">
+			<div class="tab_title"><h3>N-Grams</h3><a href="how_to_use_TLG.html#tab3" target="blank"><div class="tooltip"><i class="fa-solid fa-question"></i></a><span class="tooltiptext">Learn how it works</span></div>
+		  	</div>
+		  	<div class="">
+		  		<input type="text" name="search">
+		  	</div>
+		  	<div class="clear_search"> 
+		    	<button id="clearBtn" class="secondary-btn">Clear All</button>
+		    	<button id="searchBtn">Search</button>
+	    	</div>
 		</div>
-	</div>
+
+		<div id="tab3" class="tab-content">
+		  	<div class="tab_title"><h3>Statistics</h3><a href="how_to_use_TLG.html#tab4" target="blank"><div class="tooltip"><i class="fa-solid fa-question"></i></a><span class="tooltiptext">Learn how it works</span></div>
+			</div>
+		</div>
 
 	  <!--script per far funzionare le tab nella pagina di ricerca-->
 	  <script> 
@@ -180,7 +189,7 @@
 	    });
 	  </script>
 	</div>
-	<!-- qua si trovano i filtri e i sultati della ricerca-->
+	<!-- qua si trovano i filtri e i risultati della ricerca-->
 	<div class="page_content">
 		<!--sezione laterale coi filtri-->
 		<div class="filters">
