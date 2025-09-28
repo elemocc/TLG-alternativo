@@ -12,13 +12,25 @@
 </head>
 <body>
 	<nav>
-		<a href="index.html" class="logo"><img src="images/TLG_logo.png"></a>
-		<a href="index.html">HOME</a>
-		<a href="TLG_canon.html">TLG CANON</a>
-		<a href="#">LEXICA</a>
-		<a class="active">HOW TO USE TLG</a>
-		<a href="#"><i class="fa-solid fa-user"></i>LOGIN</a>
+		<a class="logo"><img src="images/TLG_logo.png"></a>
+		<div class="nav-links">
+			<a href="index.html">HOME</a>
+			<a href="TLG_canon.html">TLG CANON</a>
+			<a href="#">LEXICA</a>
+			<a class="active">HOW TO USE TLG</a>
+			<a href="#"><i class="fa-solid fa-user"></i>LOGIN</a>
+		</div>				
+		<button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
 	</nav>
+
+	<script>
+		const toggleBtn = document.querySelector(".menu-toggle");
+		const navLinks = document.querySelector(".nav-links");
+
+		toggleBtn.addEventListener("click", () => {
+		  navLinks.classList.toggle("show");
+		});
+	</script>
 	<!--breadcrumbs-->
 		<ul class="breadcrumbs">
 		  <li><a href="index.html">Home</a></li>

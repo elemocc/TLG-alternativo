@@ -18,14 +18,26 @@
 	<div class="hero-image">
 		<nav class="nav_home">
 			<a class="logo"><img src="images/TLG_logo.png"></a>
-			<a class="active">HOME</a>
-			<a href="TLG_canon.html">TLG CANON</a>
-			<a href="#">LEXICA</a>
-			<a href="how_to_use_TLG.html">HOW TO USE TLG</a>
-			<a href="#"><i class="fa-solid fa-user"></i>LOGIN</a>
+			<div class="nav-links">
+				<a class="active">HOME</a>
+				<a href="TLG_canon.html" >TLG CANON</a>
+				<a href="#">LEXICA</a>
+				<a href="how_to_use_TLG.html">HOW TO USE TLG</a>
+				<a href="#"><i class="fa-solid fa-user"></i>LOGIN</a>
+			</div>				
+			<button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
 		</nav>	
 	</div>
 	
+	<script>
+		const toggleBtn = document.querySelector(".menu-toggle");
+		const navLinks = document.querySelector(".nav-links");
+
+		toggleBtn.addEventListener("click", () => {
+		  navLinks.classList.toggle("show");
+		});
+	</script>
+
   	<div class="hero-text">
    		<h1>The Greek literature at your fingertips</h1>
     	<a href="TLG_canon.html"><button>Start a new search<i class="fa-solid fa-chevron-right"></i></button></a>

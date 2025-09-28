@@ -11,14 +11,27 @@
 	<script src="https://kit.fontawesome.com/f54a36df8b.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<nav>
-		<a href="index.html" class="logo"><img src="images/TLG_logo.png"></a>
-		<a href="index.html">HOME</a>
-		<a class="active">TLG CANON</a>
-		<a href="#">LEXICA</a>
-		<a href="how_to_use_TLG.html">HOW TO USE TLG</a>
-		<a href="#"><i class="fa-solid fa-user"></i>LOGIN</a>
-	</nav>
+		<nav>
+			<a class="logo"><img src="images/TLG_logo.png"></a>
+			<div class="nav-links">
+				<a href="index.html">HOME</a>
+				<a class="active">TLG CANON</a>
+				<a href="#">LEXICA</a>
+				<a href="how_to_use_TLG.html">HOW TO USE TLG</a>
+				<a href="#"><i class="fa-solid fa-user"></i>LOGIN</a>
+			</div>				
+			<button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+		</nav>
+
+	<script>
+		const toggleBtn = document.querySelector(".menu-toggle");
+		const navLinks = document.querySelector(".nav-links");
+
+		toggleBtn.addEventListener("click", () => {
+		  navLinks.classList.toggle("show");
+		});
+	</script>
+
 	<!--breadcrumbs-->
 	<ul class="breadcrumbs">
 		<li><a href="index.html">Home</a></li>
@@ -169,6 +182,13 @@
 		<div id="tab3" class="tab-content">
 		  	<div class="tab_title"><h3>Statistics</h3><a href="how_to_use_TLG.html#tab4" target="blank"><div class="tooltip"><i class="fa-solid fa-question"></i></a><span class="tooltiptext">Learn how it works</span></div>
 			</div>
+			<div class="">
+		  		<input type="text" name="search">
+		  	</div>
+		  	<div class="clear_search"> 
+		    	<button id="clearBtn" class="secondary-btn">Clear All</button>
+		    	<button id="searchBtn">Search</button>
+	    	</div>
 		</div>
 
 	  <!--script per far funzionare le tab nella pagina di ricerca-->

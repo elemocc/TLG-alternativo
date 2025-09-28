@@ -24,6 +24,15 @@ nav {
 	overflow: hidden;
 }
 
+.nav-links {
+	display: flex;
+	justify-content: flex-end;
+	align-content: center;
+	align-items: center;
+	margin: 0;
+	flex-shrink: 1;
+}
+
 nav a {
 	font-family: Work Sans, arial, sans-serif;
 	color: white;
@@ -51,6 +60,20 @@ nav .logo:hover {
 	border: none;
 }
 
+.nav-links.show {
+  display: flex;              /* mostralo quando attivo */
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+
 .logo img {
 	margin: 0;
 	padding: 10px;
@@ -60,6 +83,36 @@ nav .logo:hover {
 
 nav.nav_home {
 	background-color: transparent;
+}
+
+
+
+/* MEDIA QUERY: quando lo schermo è piccolo */
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #012A4A;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    padding: 1rem;
+    z-index: 1;
+  }
+
+  .nav-links a {
+  	margin: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block; /* mostra l’hamburger */
+    margin-right: 20px;
+  }
 }
 
 /*styling delle breadcrumbs*/
@@ -201,12 +254,6 @@ ul.breadcrumbs li a:visited {
 	border-radius: 10px;
 }
 
-@media(max-width: 500px) {
-	.container {
-	flex-wrap: wrap;
-	}
-}
-
 .box h1 {
 	font-size: 26pt;
 	margin: 20px 0 0 40px;
@@ -291,7 +338,6 @@ ul.breadcrumbs li a:visited {
 	display: flex;
 	justify-content: space-evenly;
 	padding: 40px 0;
-
 }
 
 .card {
@@ -325,12 +371,27 @@ ul.breadcrumbs li a:visited {
 	border-top-left-radius: 10px;
 }
 
-@media screen and (max-width: 800px) {
-	.card_container {
-		flex-wrap: wrap;
-	}
+@media (max-width: 600px) {
+  .container {
+  	flex-direction: column;
+  	align-items: center;
+  }
 
+  .box {
+  	width: 80%;
+  	margin: 10px 0;
+  }
+
+  .card_container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+  	width: 80%;
+  	margin: 10px 0;
+  }
 }
+
 /*footer*/
 footer {
 	background-color: #012A4A;
@@ -521,7 +582,7 @@ footer button:hover {
 
 .tooltiptext {
   visibility: hidden;
-  opacity: 0; /* Start transparent */
+  opacity: 0; 
   transition: opacity 0.3s ease-in-out;
   width: 160px;
   background-color: #FFF4EB;
