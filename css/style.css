@@ -85,9 +85,6 @@ nav.nav_home {
 	background-color: transparent;
 }
 
-
-
-/* MEDIA QUERY: quando lo schermo è piccolo */
 @media (max-width: 700px) {
   .nav-links {
     display: none;
@@ -99,6 +96,7 @@ nav.nav_home {
     width: 200px;
     padding: 1rem;
     z-index: 1;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
   .nav-links a {
@@ -341,7 +339,6 @@ ul.breadcrumbs li a:visited {
 }
 
 .card {
-  /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
   background-color: #D7E3FC;
   transition: 0.3s;
   width: 30%;
@@ -713,15 +710,18 @@ select, input[type="text"] {
 	background-color: #EDF2FB;
 }   
 
+/*filtri di ricerca*/
+
 .filters {
  	width: 25%;
  	border: solid 1px #eee;
  	position: sticky;
- 	top: 0;
+ 	top: 5px;
  	height: fit-content;
  	background-color: white;
  	margin-left: 5px;
  	border-radius: 5px;
+ 	padding: 10px;
  }
 
 .sort {
@@ -744,10 +744,23 @@ select, input[type="text"] {
   text-align: left;
   position: relative;
   color: #022f40;
+  overflow: hidden;
 }
 
 .dropbtn:hover {
 	background-color: #b1c7fc;
+}
+
+@media (max-width: 900px) {
+	.sort {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.sort h4 {
+		margin: 10px 0;
+	}
 }
 
 /* la freccia */
@@ -934,7 +947,6 @@ hr {
 .tabs-container {
 	display: flex;
 	background-color: #EDF2FB;
-	/*padding-bottom: 10%;*/
 }
 
 .tabs-container .tabs {
@@ -954,12 +966,11 @@ hr {
 	border-radius: 5px;
 	margin-bottom: 10px;
 	font-weight: 600;
-
 }
 
 .tabs-container .tab.active {
 	background-color: #f6fdff;
-	color: black;
+	color: #022f40;
 	border-left: solid #5885da;
   border-top: solid #5885da;
   border-bottom: solid #5885da;
@@ -987,7 +998,6 @@ hr {
 	font-size: 16pt;
 	line-height: 1.5;
 }
-
 
 .tabs-container .content-container .content.active {
 	display: block;
