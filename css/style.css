@@ -61,7 +61,7 @@ nav .logo:hover {
 }
 
 .nav-links.show {
-  display: flex;              /* mostralo quando attivo */
+  display: flex;              
 }
 
 .menu-toggle {
@@ -85,7 +85,7 @@ nav.nav_home {
 	background-color: transparent;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .nav-links {
     display: none;
     flex-direction: column;
@@ -101,10 +101,6 @@ nav.nav_home {
 
   .nav-links a {
   	margin: 10px 0;
-  }
-
-  .nav-links.show {
-    display: flex;
   }
 
   .menu-toggle {
