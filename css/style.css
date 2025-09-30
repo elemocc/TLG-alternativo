@@ -124,20 +124,17 @@ ul.breadcrumbs li {
   font-size: 14pt;
 }
 
-/* Add a slash symbol (/) before/behind each list item */
 ul.breadcrumbs li+li:before {
   padding: 8px;
   color: black;
   content: "/\00a0";
 }
 
-/* Add a color to all links inside the list */
 ul.breadcrumbs li a {
   text-decoration: underline;
   color: #022f40;
 }
 
-/* Add a color on mouse-over */
 ul.breadcrumbs a:hover {
   color: red;
 }
@@ -443,7 +440,6 @@ i:visited {
 	align-content: center;
 	flex-direction: column;
 	margin: 40px;
-	/*padding: 0 40px;*/
 }
 
 .third_column {
@@ -709,7 +705,8 @@ select, input[type="text"] {
 /*filtri di ricerca*/
 
 .filters {
- 	width: 25%;
+	font-family: Work Sans, arial, sans-serif; 	
+	width: 25%;
  	border: solid 1px #eee;
  	position: sticky;
  	top: 5px;
@@ -771,46 +768,46 @@ select, input[type="text"] {
   transition: transform 0.3s;
 }
 
-/* quando il menu è aperto → freccia ruota */
+/* quando il menu è aperto la freccia ruota */
 .dropdown.show .dropbtn::after {
   transform: translateY(-50%) rotate(180deg);
 }
 
-    /* lista opzioni */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-			border: 1px solid #89C2D9;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-top: 4px;
-      z-index: 1;
-      min-width: 100%;
-    }
+/* lista opzioni */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+	border: 1px solid #89C2D9;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-top: 4px;
+  z-index: 1;
+  min-width: 100%;
+}
 
-    .dropdown-content div {
-      padding: 10px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
+.dropdown-content div {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
 
-    .dropdown-content div:hover {
-      background-color: #ABC4FF;
-    }
+.dropdown-content div:hover {
+  background-color: #ABC4FF;
+}
 
-    .dropdown.show .dropdown-content {
-      display: block;
-    }
+.dropdown.show .dropdown-content {
+  display: block;
+}
 
- .filters h3 {
- 	padding-left: 15px;
+.filters h3 {
+	padding-left: 15px;
  	font-size: 18pt;
- }
+}
 
- .filters h4 {
- 	font-weight: 500;
- }
+.filters h4 {
+  font-weight: 500;
+}
 
 /*styling zona dei risultati*/
 .results {
@@ -962,6 +959,7 @@ hr {
 	border-radius: 5px;
 	margin-bottom: 10px;
 	font-weight: 600;
+	font-family: Work Sans, arial, sans-serif;
 }
 
 .tabs-container .tab.active {
