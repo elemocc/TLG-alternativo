@@ -24,14 +24,14 @@
 			<button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
 		</nav>
 <!--script per il media query-->
-	<script>
+	<!--<script>
 		const toggleBtn = document.querySelector(".menu-toggle");
 		const navLinks = document.querySelector(".nav-links");
 
 		toggleBtn.addEventListener("click", () => {
 		  navLinks.classList.toggle("show");
 		});
-	</script>
+	</script>-->
 
 <!--breadcrumbs-->
 	<ul class="breadcrumbs">
@@ -66,7 +66,7 @@
   			</div>
 	  	</div>
 	  	<!-- script per funzionamento maschera di ricerca-->
-	  	<script>
+	  	<!--<script>
 		    const container = document.getElementById("search-container");
 		    const addBtn = document.getElementById("addRowBtn");
 		    const clearBtn = document.getElementById("clearBtn");
@@ -166,7 +166,7 @@
 
 		    // una riga di default
 		    createRow();
-  	</script>
+  	</script>-->
 
 		<div id="tab2" class="tab-content">
 			<div class="tab_title"><h3>N-Grams</h3><a href="how_to_use_TLG.html#tab3" target="blank"><div class="tooltip"><i class="fa-solid fa-question"></i></a><span class="tooltiptext">Learn how it works</span></div>
@@ -192,7 +192,7 @@
 	    	</div>
 		</div>
 
-<!--script per far funzionare le tab nella pagina di ricerca-->
+<!--script per far funzionare le tab nella pagina di ricerca
 	  <script> 
 	    const buttons = document.querySelectorAll(".tab-button");
 	    const contents = document.querySelectorAll(".tab-content");
@@ -208,7 +208,7 @@
 	        document.getElementById(btn.dataset.tab).classList.add("active");
 	      });
 	    });
-	  </script>
+	  </script>-->
 	</div>
 <!-- qua si trovano i filtri e i risultati della ricerca-->
 	<div class="page_content">
@@ -264,7 +264,7 @@
 					</div>	
 				</div>
 			</div>
-<!--script per far funzionare i dropdown-->
+<!--script per far funzionare i dropdown
 		<script>
 		    document.querySelectorAll(".dropdown").forEach(dropdown => {
 			  const button = dropdown.querySelector(".dropbtn");
@@ -291,7 +291,7 @@
 			    }
 			  });
 			});
-  		</script>
+  		</script>-->
 <!--sezione coi risultati della ricerca-->
 		<div class="results">
 			<div class="results_title">
@@ -390,6 +390,6 @@
 				<a href="#">Credits</a>
 			</div>
 		</footer>
-	
+	<script src="js/TLG_Canon.js"></script>
 </body>
 </html>
